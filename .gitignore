@@ -1,0 +1,4 @@
+out/
+.idea/*.xml
+!.idea/modules.xml
+.idea/inspectionProfiles
