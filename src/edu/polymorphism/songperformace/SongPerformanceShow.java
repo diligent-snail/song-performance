@@ -12,8 +12,8 @@ public class SongPerformanceShow {
 
             for (Judge judge : judges) {
                 Judgement judgement = judge.judge(performance);
-                System.out.println(judge.getName() + " говорит: '" + judgement.getComment()
-                                   + "', оценка: " + judgement.getPoints() + " из " + Judgement.MAX_POINTS);
+                System.out.println(judge.getName() + " говорит: '" + judgement.comment()
+                                   + "', оценка: " + judgement.points() + " из " + Judgement.MAX_POINTS);
             }
         }
     }
