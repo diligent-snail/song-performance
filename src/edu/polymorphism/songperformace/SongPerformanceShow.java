@@ -2,7 +2,9 @@ package edu.polymorphism.songperformace;
 
 public class SongPerformanceShow {
     public static void main(String[] args) {
+        // TODO: Судей добавить в этот массив
         Judge[] judges = {};
+        // TODO: Выступления добавляем сюда
         Performance[] performances = {new Performance("Яна", "Видеоигры")};
 
         for (Performance performance : performances) {
