@@ -8,7 +8,10 @@
 
 == Задача
 
-. Понять, что такое полиморфизм.
+. Понять, что такое полиморфизм footnote:[Вообще, полиморфизм -- это не только переопределение методов. https://en.wikipedia.org/wiki/Polymorphism_(computer_science)[Polymorphism (computer science)]].
+Статьи:
+.. https://hr-vector.com/java/polimorfizm[Полиморфизм в Java]
+.. https://docs.oracle.com/javase/tutorial/java/IandI/polymorphism.html[Polymorphism, The Java™ Tutorials]
 . Добавить в программу несколько судей.
 Каждый из них по-разному оценивает участников.
 Примеры:
@@ -19,37 +22,121 @@
 .. Добавить несколько выступлений в массив `performances`.
 
 [#submit]
-== Куда сдавать
+== Как сдавать
 
-Куда удобно:
+=== Если с Git'ом тяжело
 
-* *Slack*: отправить в личные сообщения
-* *Почта*: mailto:dzavedeev@hse.ru[]
-
-== Как скачать проект
-
-* Если немного знаете про Git, то:
-+
-[source,shell script]
-----
-git clone https://github.com/diligent-snail/song-performance.git
-----
-* Если нет, то скачайте архивом:
-. Code
-. Download ZIP
-
-== Как открыть проект
-
-В Intellij IDEA:
-
-. File
-. Open
-. Выберите директорию с проектом
-
-== Как сдать проект
-
-. Экспортируйте проект, для этого в Intellij IDEA:
+. Скачать проект архивом:
+.. Code
+.. Download ZIP
+. Открыть проект в Intellij IDEA:
+.. File
+.. Open
+.. Выберите директорию с проектом
+. Выполнить ДЗ
+. Экспортировать проект:
 .. File
 .. Export
 .. Project to ZIP file
-. <<submit,Отправьте на проверку>>
+. Отправить на почту или в Telegram
+
+=== Через Git и GitHub
+
+Варианта 2:
+
+. Создать новый репозиторий на GitHub
+. Продолжить в старом
+
+[#newRepository]
+==== Новый репозиторий
+
+. Создаём репозиторий:
+.. Перейти по ссылке -- https://github.com/new/import
+.. Your old repository’s clone URL -- https://github.com/diligent-snail/song-performance
+.. Repository name -- можно поменять
+.. Privacy -- Private
+.. Begin Import
+. Получаем проект локально:
+.. Открыть git
+.. В репозитории на GitHub:
+... Нажать «Code»
+... Скопировать url.
+Пример url'а: `git@github.com:cac03/song-performance.git`
+... Выполнить команду:
++
+[source,bash]
+----
+git clone *ваш url*
+----
+.. Перейти в директорию с проектом:
++
+[source,bash]
+----
+cd *имя проекта*
+----
+. Создать ветку с решением, пример:
++
+[source,bash]
+----
+git checkout -b solution
+----
+. Открыть проект в Intellij IDEA:
+.. File
+.. Open
+.. Выберите директорию с проектом
+. Написать решение
+. В Git консоли:
+.. Записываем изменения:
++
+[source,bash]
+----
+git add .
+git commit
+----
+. Отправляем изменения:
++
+[source,bash]
+----
+git push
+----
+.. О `--set-upstream`: https://stackoverflow.com/questions/37770467/why-do-i-have-to-git-push-set-upstream-origin-branch
+. Создать PR:
+.. Открываем проект на GitHub
+.. Pull Requests
+.. New Pull Request
+.. Слева -- `main` ветка, справа -- ветка с решением
++
+image::compare-branches.png[]
+.. Create pull request
+. Пригласить в проект меня
+. Написать мне в Telegram, на почту или поставить ревьювером в Pull Request
+
+=== Старый репозиторий
+
+. Влить PR со второго ДЗ, если мы его не влили до этого:
+.. Открыть PR
+.. Нажать «Merge pull request»
+. В консоли git:
+.. Вернуться в главную ветку:
++
+[source,shell]
+----
+git checkout main
+----
+.. Получить изменения из GitHub
++
+[source,shell]
+----
+git pull
+----
+. Скопировать исходники приложения song-performance к себе в проект
+. Добавить, сделать коммит, отправить на GitHub:
++
+[source,shell]
+----
+git add .
+git commit
+git push
+----
+. Далее -- тоже самое, что в «<<newRepository>>», начиная с пункта «Создать ветку с решением»
+
