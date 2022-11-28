@@ -3,9 +3,9 @@ package edu.polymorphism.songperformace;
 public class SongPerformanceShow {
     public static void main(String[] args) {
         // TODO: Судей добавить в этот массив
-        Judge[] judges = {};
+        Judge[] judges = {new FirstJudge(), new SecondJudge()};
         // TODO: Выступления добавляем сюда
-        Performance[] performances = {new Performance("Яна", "Видеоигры")};
+        Performance[] performances = {new Performance("Яна", "Видеоигры"), new Performance("Noname", "Radiohead")};
 
         for (Performance performance : performances) {
             System.out.println(performance.getCandidateName() + " исполняет '" + performance.getSong() + "'");
