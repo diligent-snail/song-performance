@@ -17,3 +17,30 @@ public abstract class Judge {
      */
     public abstract String getName();
 }
+
+class FirstJudge extends Judge {
+    @Override
+    public Judgement judge(Performance performance) {
+        if(performance.getSong().equals("Radiohead")) {
+            return new Judgement(5, "a");
+        }
+        return new Judgement(3, "a");
+    }
+
+    @Override
+    public String getName() {
+        return "Judge A";
+    }
+}
+
+class SecondJudge extends Judge {
+    @Override
+    public Judgement judge(Performance performance) {
+        return new Judgement(5, "a");
+    }
+
+    @Override
+    public String getName() {
+        return "Judge B";
+    }
+}
